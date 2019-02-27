@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Event</title>
+    <link href="../static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+<form class="form-addevent" action="#" th:action="@{/addEvent}" th:object="${ev}" method="post">
+
+    <label for="nom">nom</label>
+    <input type="text" th:field="*{nom}" id="nom" placeholder="Name">
+    <span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></span>
+    <br>
+
+    <label for="date_deb">date_deb</label>
+    <input type="text" th:field="*{date_deb}" id="date_deb" placeholder="date_deb">
+
+
+    <br>
+    <label for="date_fin">date_fin</label>
+    <input type="text" th:field="*{date_fin}" id="date_fin" placeholder="date_fin">
+
+
+    <br>
+
+    <label for="description">description</label>
+    <input type="text" th:field="*{description}" id="description" placeholder="description">
+    <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></span>
+    <br>
+
+    <label for="prix">prix</label>
+    <input type="text" th:field="*{prix}" id="prix" placeholder="prix">
+    <span th:if="${#fields.hasErrors('prix')}" th:errors="*{prix}"></span>
+
+    <br>
+    <label for="nbre_de_place">nbre_de_place</label>
+    <input type="text" th:field="*{nbre_de_place}" id="nbre_de_place" placeholder="nbre_de_place">
+    <span th:if="${#fields.hasErrors('nbre_de_place')}" th:errors="*{nbre_de_place}"></span>
+    <br>
+    <label for="region">region</label>
+    <input type="text" th:field="*{region}" id="region" placeholder="region">
+    <span th:if="${#fields.hasErrors('region')}" th:errors="*{region}"></span>
+    <br>
+    <input type="submit" value="Add Event">
+    <br>
+
+</form>
+</div>
+</body>
+</html>
